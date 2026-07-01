@@ -1,0 +1,12 @@
+{
+  "name": "daniel-ia-server",
+  "version": "1.0.0",
+  "description": "Servidor para Daniel IA",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node Server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
