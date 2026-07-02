@@ -79,14 +79,28 @@ white-space:pre-wrap;
 </head>
 <body>
 
-<div class="box">
-<h2>Daniel ❤️</h2>
+<div class="app">
 
-<input id="mensaje" placeholder="Escribe algo...">
+  <div class="header">
+    <div class="perfil">👤</div>
 
-<button onclick="enviar()">Enviar</button>
+    <div class="info">
+      <div class="nombre">Daniel ❤️</div>
+      <div class="estado">🟢 En línea</div>
+    </div>
 
-<div id="respuesta"></div>
+    <div class="iconos">
+      📞 📹 ℹ️
+    </div>
+  </div>
+
+  <div id="chat"></div>
+
+  <div class="barra">
+    <input id="mensaje" placeholder="Escribe un mensaje...">
+    <button onclick="enviar()">➤</button>
+  </div>
+
 </div>
 
 <script>
@@ -107,9 +121,24 @@ mensaje
 
 const data=await res.json();
 
-document.getElementById("respuesta").innerText=data.respuesta;
+const chat = document.getElementById("respuesta");
 
-}
+chat.innerHTML += `
+<div style="text-align:right;margin:10px;">
+  <span style="background:#005c4b;color:white;padding:10px;border-radius:15px;display:inline-block;">
+    ${mensaje}
+  </span>
+</div>
+
+<div style="text-align:left;margin:10px;">
+  <span style="background:#202c33;color:white;padding:10px;border-radius:15px;display:inline-block;">
+    ${data.respuesta}
+  </span>
+</div>
+`;
+
+document.getElementById("mensaje").value = "";
+chat.scrollTop = chat.scrollHeight;
 
 </script>
 
