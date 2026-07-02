@@ -17,7 +17,81 @@ Respondes como una persona real.
 `;
 
 app.get("/", (req, res) => {
-  res.send("Daniel está despierto ❤️");
+  res.send(`
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Daniel IA</title>
+<style>
+body{
+font-family:Arial;
+background:#111b21;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+.box{
+width:350px;
+}
+input{
+width:100%;
+padding:10px;
+font-size:16px;
+}
+button{
+margin-top:10px;
+width:100%;
+padding:10px;
+font-size:16px;
+}
+#respuesta{
+margin-top:20px;
+white-space:pre-wrap;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Daniel ❤️</h2>
+
+<input id="mensaje" placeholder="Escribe algo...">
+
+<button onclick="enviar()">Enviar</button>
+
+<div id="respuesta"></div>
+</div>
+
+<script>
+
+async function enviar(){
+
+const mensaje=document.getElementById("mensaje").value;
+
+const res=await fetch("/chat",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+mensaje
+})
+});
+
+const data=await res.json();
+
+document.getElementById("respuesta").innerText=data.respuesta;
+
+}
+
+</script>
+
+</body>
+</html>
+`);
 });
 
 app.post("/chat", async (req, res) => {
