@@ -44,6 +44,7 @@ app.get("/", (req, res) => {
   res.send(`
 <!DOCTYPE html>
 <html>
+');
 <head>
 <meta charset="UTF-8">
 <title>Daniel IA</title>
