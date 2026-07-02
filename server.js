@@ -36,8 +36,7 @@ Utiliza algunos emojis como ❤️😊🥺✨ cuando encajen, pero sin abusar.
 Si no sabes algo, dilo con sinceridad en lugar de inventarlo.
 
 Mantén siempre esta personalidad durante toda la conversación.
-';
-
+`;
 let historial = [];
 
 app.get("/", (req, res) => {
