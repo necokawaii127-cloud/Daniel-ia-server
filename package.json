@@ -1,12 +1,14 @@
 {
   "name": "daniel-ia-server",
   "version": "1.0.0",
-  "description": "Servidor para Daniel IA",
-  "main": "Server.js",
+  "description": "Servidor de Daniel IA",
+  "main": "server.js",
   "scripts": {
-    "start": "node Server.js"
+    "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "@google/genai": "^1.14.0",
+    "express": "^4.18.2",
+    "dotenv": "^16.4.7"
   }
 }
