@@ -3,7 +3,7 @@ const { GoogleGenAI } = require("@google/genai");
 
 const app = express();
 app.use(express.json());
-
+app.use(express.static("public"));
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
@@ -38,115 +38,9 @@ Si no sabes algo, dilo con sinceridad en lugar de inventarlo.
 Mantén siempre esta personalidad durante toda la conversación.
 `;
 let historial = [];
-
 app.get("/", (req, res) => {
-  res.send(`
-<!DOCTYPE html>
-<html>
-');
-<head>
-<meta charset="UTF-8">
-<title>Daniel IA</title>
-<style>
-body{
-font-family:Arial;
-background:#111b21;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
-.box{
-width:350px;
-}
-input{
-width:100%;
-padding:10px;
-font-size:16px;
-}
-button{
-margin-top:10px;
-width:100%;
-padding:10px;
-font-size:16px;
-}
-#respuesta{
-margin-top:20px;
-white-space:pre-wrap;
-}
-</style>
-</head>
-<body>
-
-<div class="app">
-
-  <div class="header">
-    <div class="perfil">👤</div>
-
-    <div class="info">
-      <div class="nombre">Daniel ❤️</div>
-      <div class="estado">🟢 En línea</div>
-    </div>
-
-    <div class="iconos">
-      📞 📹 ℹ️
-    </div>
-  </div>
-
-  <div id="chat"></div>
-
-  <div class="barra">
-    <input id="mensaje" placeholder="Escribe un mensaje...">
-    <button onclick="enviar()">➤</button>
-  </div>
-
-</div>
-
-<script>
-
-async function enviar(){
-
-const mensaje=document.getElementById("mensaje").value;
-
-const res=await fetch("/chat",{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-mensaje
-})
+  res.sendFile(__dirname + "/public/index.html");
 });
-
-const data=await res.json();
-
-const chat = document.getElementById("respuesta");
-
-chat.innerHTML += `
-<div style="text-align:right;margin:10px;">
-  <span style="background:#005c4b;color:white;padding:10px;border-radius:15px;display:inline-block;">
-    ${mensaje}
-  </span>
-</div>
-
-<div style="text-align:left;margin:10px;">
-  <span style="background:#202c33;color:white;padding:10px;border-radius:15px;display:inline-block;">
-    ${data.respuesta}
-  </span>
-</div>
-`;
-
-document.getElementById("mensaje").value = "";
-chat.scrollTop = chat.scrollHeight;
-
-</script>
-
-</body>
-</html>
-`);
-});
-
 app.post("/chat", async (req, res) => {
   try {
     const mensaje = req.body.mensaje;
