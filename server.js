@@ -49,20 +49,29 @@ historial.push({
   parts: [{ text: mensaje }]
 });
 
-    const response = await ai.models.generateContent({
+  let response;
+
+for (let intento = 0; intento < 3; intento++) {
+  try {
+    response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
-    contents: [
-  {
-    role: "user",
-    parts: [
-      {
-        text: personalidad
-      }
-    ]
-  },
-  ...historial
-]
-});
+      contents: [
+        {
+          role: "user",
+          parts: [{ text: personalidad }]
+        },
+        ...historial
+      ]
+    });
+    break;
+  } catch (err) {
+    if (err.status === 429 && intento < 2) {
+      await new Promise(r => setTimeout(r, 3000));
+      continue;
+    }
+    throw err;
+  }
+}  
 
 historial.push({
   role: "model",
