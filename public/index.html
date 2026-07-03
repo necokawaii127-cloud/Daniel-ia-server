@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Daniel ❤️</title>
 
 <link rel="stylesheet" href="style.css">
@@ -10,21 +11,31 @@
 
 <body>
 
-<div class="box">
+<div class="chat">
 
-<h2>Daniel ❤️</h2>
+    <div class="header">
 
-<div id="respuesta"></div>
+        <div class="avatar">👤</div>
 
-<input
-id="mensaje"
-type="text"
-placeholder="Escribe un mensaje..."
-onkeydown="if(event.key==='Enter') enviar();">
+        <div class="info">
+            <div class="nombre">Daniel ❤️</div>
+            <div class="estado">🟢 En línea</div>
+        </div>
 
-<button onclick="enviar()">
-Enviar
-</button>
+    </div>
+
+    <div id="respuesta"></div>
+
+    <div class="barra">
+
+        <input
+        id="mensaje"
+        placeholder="Escribe un mensaje..."
+        onkeydown="if(event.key==='Enter') enviar();">
+
+        <button onclick="enviar()">➤</button>
+
+    </div>
 
 </div>
 
