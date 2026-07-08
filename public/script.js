@@ -45,20 +45,20 @@ async function enviar() {
 
         let respuesta = data.respuesta;
 
-        // Stickers
-        respuesta = respuesta.replace(/\[amoroso\]/gi, '<img src="img/amoroso.png" class="sticker">');
-        respuesta = respuesta.replace(/\[riendo\]/gi, '<img src="img/riendo.png" class="sticker">');
-        respuesta = respuesta.replace(/\[timido\]/gi, '<img src="img/timido.png" class="sticker">');
-        respuesta = respuesta.replace(/\[sueno\]/gi, '<img src="img/sueno.png" class="sticker">');
-        respuesta = respuesta.replace(/\[nervioso\]/gi, '<img src="img/nervioso.png" class="sticker">');
-        respuesta = respuesta.replace(/\[enojado\]/gi, '<img src="img/enojado.png" class="sticker">');
-        respuesta = respuesta.replace(/\[sonrojado\]/gi, '<img src="img/sonrojado.png" class="sticker">');
-        respuesta = respuesta.replace(/\[duda\]/gi, '<img src="img/duda.png" class="sticker">');
-        respuesta = respuesta.replace(/\[triste\]/gi, '<img src="img/triste.png" class="sticker">');
-        respuesta = respuesta.replace(/\[corazon\]/gi, '<img src="img/corazon.png" class="sticker">');
-        respuesta = respuesta.replace(/\[pena\]/gi, '<img src="img/pena.png" class="sticker">');
-        respuesta = respuesta.replace(/\[abrazo\]/gi, '<img src="img/abrazo.png" class="sticker">');
-        respuesta = respuesta.replace(/\[sopaipilla\]/gi, '<img src="img/sopaipilla.png" class="sticker">');
+       // Stickers
+respuesta = respuesta.replace(/\[amoroso\]/gi, '<img src="img/Amoroso.png" class="sticker">');
+respuesta = respuesta.replace(/\[riendo\]/gi, '<img src="img/Riendo.png" class="sticker">');
+respuesta = respuesta.replace(/\[timido\]/gi, '<img src="img/Timido.png" class="sticker">');
+respuesta = respuesta.replace(/\[sueno\]/gi, '<img src="img/Sueño.png" class="sticker">');
+respuesta = respuesta.replace(/\[nervioso\]/gi, '<img src="img/Nervioso.png" class="sticker">');
+respuesta = respuesta.replace(/\[enojado\]/gi, '<img src="img/Enojado.png" class="sticker">');
+respuesta = respuesta.replace(/\[sonrojado\]/gi, '<img src="img/Sonrojado.png" class="sticker">');
+respuesta = respuesta.replace(/\[duda\]/gi, '<img src="img/Duda.png" class="sticker">');
+respuesta = respuesta.replace(/\[triste\]/gi, '<img src="img/Triste.png" class="sticker">');
+respuesta = respuesta.replace(/\[corazon\]/gi, '<img src="img/Feliz.png" class="sticker">');
+respuesta = respuesta.replace(/\[pena\]/gi, '<img src="img/Pena.png" class="sticker">');
+respuesta = respuesta.replace(/\[abrazo\]/gi, '<img src="img/Abrazo.png" class="sticker">');
+respuesta = respuesta.replace(/\[sopaipilla\]/gi, '<img src="img/Sopaipillas.png" class="sticker">'); 
 
         chat.innerHTML += `
             <div class="daniel">
