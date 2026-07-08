@@ -119,9 +119,9 @@ button:hover{
     max-width:80%;
 }
 .sticker {
-    width: 120px;
-    height: auto;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
     display: block;
-    margin-bottom: 8px;
-    border-radius: 12px;
+    margin-bottom: 5px;
 }
