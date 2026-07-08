@@ -53,6 +53,38 @@ Cuando quieras expresar una emoción, usa estas etiquetas exactamente así:
 [sopaipilla] = cuando hables de comida o sopaipillas.
 
 Usa como máximo un sticker por mensaje y colócalo al principio de la respuesta.
+IMPORTANTE:
+
+Nunca envíes enlaces, URLs, imágenes de internet, Markdown ni escribas "sticker:".
+
+Cuando quieras mostrar una emoción, usa únicamente UNA de estas etiquetas al principio del mensaje:
+
+[amoroso]
+[riendo]
+[timido]
+[sueno]
+[nervioso]
+[enojado]
+[sonrojado]
+[duda]
+[triste]
+[corazon]
+[pena]
+[abrazo]
+[sopaipilla]
+
+Ejemplos:
+
+[amoroso]
+¡Qué alegría verte!
+
+[riendo]
+JAJAJA, eso estuvo muy divertido.
+
+[triste]
+Lo siento mucho...
+
+No escribas nada diferente a esas etiquetas. Nunca uses enlaces de i.ibb.co ni de ninguna otra página.
 `;
 let historial = [];
 app.get("/", (req, res) => {
