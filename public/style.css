@@ -118,3 +118,10 @@ button:hover{
     border-radius:15px 15px 15px 5px;
     max-width:80%;
 }
+.sticker {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin-bottom: 8px;
+    border-radius: 12px;
+}
