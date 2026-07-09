@@ -83,3 +83,35 @@ respuesta = respuesta.replace(/\[sopaipilla\]/gi, '<img src="img/Sopaipillas.png
         chat.scrollTop = chat.scrollHeight;
     }
 }
+function escuchar() {
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+        alert("Tu navegador no es compatible con el reconocimiento de voz.");
+        return;
+    }
+
+    const reconocimiento = new SpeechRecognition();
+
+    reconocimiento.lang = "es-CL";
+    reconocimiento.interimResults = false;
+    reconocimiento.maxAlternatives = 1;
+
+    reconocimiento.start();
+
+    reconocimiento.onresult = (event) => {
+
+        const texto = event.results[0][0].transcript;
+
+        document.getElementById("mensaje").value = texto;
+
+        enviar();
+    };
+
+    reconocimiento.onerror = (event) => {
+        console.error("Error:", event.error);
+        alert("No pude escuchar tu voz.");
+    };
+
+}
