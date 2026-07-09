@@ -136,8 +136,6 @@ function escuchar() {
     };
 
     reconocimiento.onerror = (event) => {
-        console.error("Error:", event.error);
-        alert("No pude escuchar tu voz.");
-    };
-
-    }
+    console.error("Error:", event.error);
+    alert("Error del micrófono: " + event.error);
+};
