@@ -29,12 +29,14 @@
 
     <div class="barra">
 
-        <input
-        id="mensaje"
-        placeholder="Escribe un mensaje..."
-        onkeydown="if(event.key==='Enter') enviar();">
+    <button onclick="escuchar()" class="microfono">🎤</button>
 
-        <button onclick="enviar()">➤</button>
+    <input
+    id="mensaje"
+    placeholder="Escribe un mensaje..."
+    onkeydown="if(event.key==='Enter') enviar();">
+
+    <button onclick="enviar()">➤</button>
 
     </div>
 
