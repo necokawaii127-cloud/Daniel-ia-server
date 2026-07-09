@@ -109,8 +109,6 @@ function escuchar() {
         enviar();
     };
 
-    function escuchar() {
-
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
@@ -139,3 +137,5 @@ function escuchar() {
     console.error("Error:", event.error);
     alert("Error del micrófono: " + event.error);
 };
+
+}
