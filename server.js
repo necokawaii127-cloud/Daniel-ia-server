@@ -4,6 +4,8 @@ const { GoogleGenAI } = require("@google/genai");
 const app = express();
 app.use(express.json());
 app.use(express.static("public"));
+console.log("¿Existe GEMINI_API_KEY?", !!process.env.GEMINI_API_KEY);
+
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
