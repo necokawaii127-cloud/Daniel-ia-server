@@ -125,3 +125,18 @@ button:hover{
     display: block;
     margin-bottom: 5px;
 }
+.microfono{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#7b4cff;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    margin-right:8px;
+}
+
+.microfono:hover{
+    transform:scale(1.05);
+}
