@@ -135,13 +135,12 @@ if (historial.length > 20) {
     res.json({
       respuesta: response.text,
     });
+} catch (e) {
+  console.error("ERROR:", e);
 
-  } catch (e) {
-    console.error(e);
-
-    res.status(500).json({
-      respuesta: "Lo siento... tuve un problema 😔"
-    });
+  res.status(500).json({
+    respuesta: "Lo siento... tuve un problema 😔"
+  });
   }
 });
 
