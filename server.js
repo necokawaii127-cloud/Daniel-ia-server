@@ -105,7 +105,7 @@ historial.push({
 for (let intento = 0; intento < 3; intento++) {
   try {
     response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-2.5-flash-lite",
       contents: [
         {
           role: "user",
